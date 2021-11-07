@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:test_local_notification/notification_api.dart';
-import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 void main() {
   tz.initializeTimeZones();
+
+  print(DateTime.now());
   runApp(const MyApp());
 }
 
@@ -45,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                         title: "Test",
                         body: "Pleas Keep your location on",
                         payload: "Test===>",
-                        scheduledTime: DateTime.now().add(const Duration(seconds: 10)));
+                        scheduledTime: DateTime.parse("2021-11-07 15:09:00"));
                   },
                   child: const Text("Scheduled Notification")),
               ElevatedButton(
